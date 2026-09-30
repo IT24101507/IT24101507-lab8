@@ -1,0 +1,6 @@
+Write a simple program where the source and the destination doesn’t match. You can take
+either message1.cc or message2.cc and modify the program. What happens in this situation?
+
+
+Wrong source or tag: MPI_Recv blocks forever and the program deadlocks.
+Nonexistent destination rank: the run aborts at once with MPI_ERR_RANK
