@@ -1,0 +1,3 @@
+azureuser@bismarckVM:~/lab8/exe3$ mpicxx -O3 pi_mpi.cc -o pi_mpi
+azureuser@bismarckVM:~/lab8/exe3$ mpirun -np 1 ./pi_mpi
+RESULT np=1 N=10000000 hits=7854176 pi=3.141670 time=0.181552

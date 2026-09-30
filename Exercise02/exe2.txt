@@ -1,0 +1,2 @@
+azureuser@bismarckVM:~/lab8/exe1$ mpirun -np 1 ./sum_mpi
+RESULT np=1 N=10000000 sum=50000005000000 expected=50000005000000 OK time=0.003147
