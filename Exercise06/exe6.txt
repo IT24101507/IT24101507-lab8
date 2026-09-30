@@ -1,0 +1,16 @@
+Exercise 3 and Exercise 3 COmparison
+
+1. Arrival Order & Determinism
+Exercise 3: Rank 0 strictly forces the reception order: Rank 1 first, then Rank 2, then Rank 3, etc.
+Exercise 6: Rank 0 accepts messages on a first-come, first-served basis.
+
+
+2. Head-of-Line Blocking / Idling
+In Exercise 3: If Rank 1 is delayed or slower than others, Rank 0 blocks and waits at MPI_Recv(..., 1, ...). Even if Ranks 2 through 7 finished and sent their data, Rank 0 cannot consume them until Rank 1 finishes.
+In Exercise 6 (MPI_ANY_SOURCE): Head-of-line blocking is removed. Rank 0 can immediately absorb and accumulate results from whichever worker finishes first, improving throughput when workers take varying amounts of time.
+
+
+3. Numerical Accuracy
+Both programs produce the exact same total number of hits and value of pi (approximately 3.141...).
+Because addition is commutative (
+A+B = B+A), changing the order in which partial sums arrive at Rank 0 does not affect the correctness of the final sum.
